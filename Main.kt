@@ -5,11 +5,11 @@ fun main() {
     println("Cargando juego...")
     Thread.sleep(3000)
 
-    val frutas = listOf("manzana", "limon", "kiwi", "pera", "platano", "naranja", "mandarina", "mango", "chirimoya", "aguacate")
+    val frutas =
+        listOf("manzana", "limon", "kiwi", "pera", "platano", "naranja", "mandarina", "mango", "chirimoya", "aguacate")
     val random = Random()
     val indiceAleatorio = random.nextInt(frutas.size)
     val palabra = frutas[indiceAleatorio]
-    println("Palabra a adivinar: $palabra")
     var oculto = "*".repeat(palabra.length)
     println("Palabra oculta: $oculto")
 
@@ -32,27 +32,22 @@ fun main() {
         } else {
             a++
             --vidas
-            println("No está dentro")
+            println("La palabra no con tiene esa letra, lo siento, has perdido una vida")
             DibujoAhorcado.dibujar(a)
             Thread.sleep(500)
             println("Te quedan $vidas vidas")
         }
-        if(oculto == palabra){
-            println("Felicidades! Has adivinado la palabra poco a poco. ¿Quieres volver a empezar?")
-            val restart = readln().uppercase()
-            if (restart == "SI") {
-                return main()
-            }
+        if (oculto == palabra) {
+            println("Felicidades! Has adivinado la palabra poco a poco.")
+            break
         }
-
         if (vidas == 0) {
-            println("Lo siento, has perdido. ¿Quieres volver a empezar?")
-            val restart = readln().uppercase()
-            if (restart == "SI") {
-                return main()
-            }
+            println("Lo siento, has perdido")
         }
+        rm.cerrar()
     }
-
-    rm.cerrar()
 }
+
+
+
+
