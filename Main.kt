@@ -45,8 +45,9 @@ fun main() {
             println("Lo siento, has perdido")
             break
         }
-        rm.cerrar()
+
     }
+    rm.cerrar()
 }
 
 
