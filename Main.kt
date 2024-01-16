@@ -43,6 +43,7 @@ fun main() {
         }
         if (vidas == 0) {
             println("Lo siento, has perdido")
+            break
         }
         rm.cerrar()
     }
